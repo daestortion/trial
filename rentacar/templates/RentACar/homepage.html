@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'RentACar/assets/images/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <title>Home - RENTACAR</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'RentACar/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'RentACar/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'RentACar/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'RentACar/assets/css/owl.css' %}">
+
+    <!-- Inline CSS for the homepage -->
+    <style>
+        /* Resetting default margins */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Homepage specific styles */
+        body {
+            background-color: #f4f4f4;
+        }
+
+        header {
+            margin-top: 0; /* Remove top margin of the header */
+        }
+
+        .home-container {
+            max-width: 700px;
+            margin: 70px auto; /* Center the content vertically */
+            padding: 100px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        /* Remove top margin of the header */
+        header {
+            margin-top: 0;
+        }
+    </style>
+    <!-- End of Inline CSS for the homepage -->
+</head>
+<body>
+    <!-- Header (copied from other pages) -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}"><h2>RENTA<em>CAR</em></h2></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <!-- Add more navigation items here -->
+                        <!-- Logout Button Form -->
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">Logout</button>
+                        </form>                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End of Header -->
+
+    <div class="container">
+        <div class="home-container">
+            <h2>Welcome to RENTACAR</h2>
+            <p>This is the homepage content. You can customize this page to display information about your car rental service, special offers, and more.</p>      
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'RentACar/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'RentACar/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'RentACar/assets/js/custom.js' %}"></script>
+    <script src="{% static 'RentACar/assets/js/owl.js' %}"></script>
+</body>
+</html>
